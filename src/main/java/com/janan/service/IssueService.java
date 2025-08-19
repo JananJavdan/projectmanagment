@@ -1,6 +1,8 @@
 package com.janan.service;
 
 import com.janan.model.Issue;
+import com.janan.model.User;
+import com.janan.request.IssueRequest;
 import jdk.jshell.spi.ExecutionControl;
 
 import java.util.List;
@@ -8,13 +10,16 @@ import java.util.Optional;
 
 public interface IssueService {
 
-    Optional<Issue> getIssueById(Long issueId) throws IssueException;
+    Optional<Issue> getIssueById(Long issueId) throws Exception;
 
-    List<Issue> getIssueByProjectId(Long projectId) throws ProjectException;
+    List<Issue> getIssueByProjectId(Long projectId) throws Exception;
 
-    Issue createIssue(IssueRequest issue,Long userid) throws ExecutionControl.UserException, IssueException, ProjectExeption;
+    Issue createIssue(IssueRequest issue, User user) throws Exception;
 
-    Optional<Issue> updateIssue(Long issueId, IssueRequest updateIssue,Long userid) throws IssueException, ExecutionControl.UserException;
+    String deleteIssue(Long issueId, Long userId) throws Exception;
 
-    String deleteIssue(Long issueId,Long userId) throws ExecutionControl.UserException, IssueException;
+    Issue updateIssue(IssueRequest issue, Long issueId) throws Exception;
+
+    Issue addUserToIssue(Long issueId, Long userId) throws Exception;
+
 }
