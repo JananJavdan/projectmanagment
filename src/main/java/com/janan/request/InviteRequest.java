@@ -1,4 +1,4 @@
-package com.janan.repository;
+package com.janan.request;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

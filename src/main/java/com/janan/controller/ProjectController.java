@@ -4,7 +4,6 @@ import com.janan.model.Chat;
 import com.janan.model.Invitation;
 import com.janan.model.Project;
 import com.janan.model.User;
-import com.janan.repository.InviteRequest;
 import com.janan.response.MessageResponse;
 import com.janan.service.InvitationService;
 import com.janan.service.ProjectService;
